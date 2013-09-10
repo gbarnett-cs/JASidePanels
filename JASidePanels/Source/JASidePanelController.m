@@ -320,6 +320,9 @@ static char ja_kvoContext;
         leftFrame.origin.x = self.centerPanelContainer.frame.origin.x - self.leftVisibleWidth;
         rightFrame.origin.x = self.centerPanelContainer.frame.origin.x + self.centerPanelContainer.frame.size.width;
     }
+    if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        leftFrame.origin.y = 20;
+    }
     self.leftPanelContainer.frame = leftFrame;
     self.rightPanelContainer.frame = rightFrame;
     [self styleContainer:self.leftPanelContainer animate:animate duration:duration];	
